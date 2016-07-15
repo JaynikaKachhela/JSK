@@ -1,0 +1,40 @@
+﻿@model JobPortal.Models.Applicant
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h4> ...Applicant...</h4>
+<h2>Add</h2>
+
+@using (Html.BeginForm())
+{
+    <hr />
+    
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Email)
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+       
+    </div>
+    <div>
+        @Html.LabelFor(model => model.PhoneNumber)
+        @Html.EditorFor(model => model.PhoneNumber)
+        @Html.ValidationMessageFor(model => model.PhoneNumber)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.GitHubUrl)
+        @Html.EditorFor(model => model.GitHubUrl)
+        @Html.ValidationMessageFor(model => model.GitHubUrl)
+    </div>
+    <div>
+        <input type="submit" value="Add" />
+    </div>
+}
+
+@Html.ActionLink("Job List", "List","Job")
+

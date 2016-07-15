@@ -1,0 +1,31 @@
+﻿@model JobPortal.Models.Job
+
+@{
+    ViewBag.Title = "JobAdd";
+}
+
+<h4> ...Job...</h4>
+
+<h2>Add</h2>
+
+@using (Html.BeginForm())
+{
+    <hr />
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.NoOfPositions)
+        @Html.EditorFor(model => model.NoOfPositions)
+    </div>
+    <div>
+        <input type="submit" value="Add" />
+    </div>
+}
+
+@Html.ActionLink("Job List","List")
